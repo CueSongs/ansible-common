@@ -1,0 +1,22 @@
+---
+
+- name: Update Aptitude
+  apt: update_cache=yes
+
+- name: install misc packages
+  apt: name={{ item }} state=latest
+  with_items:
+    - git-core
+    - curl
+    - unzip
+    - vim
+    - htop
+    - wget
+    - mcrypt
+    - libmcrypt-dev
+
+- name: install language packs for locale support
+  apt: name={{ item }} state=latest
+  with_items:
+    - language-pack-de-base
+    - language-pack-es-base
