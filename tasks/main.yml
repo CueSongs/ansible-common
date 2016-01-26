@@ -14,6 +14,7 @@
     - wget
     - mcrypt
     - libmcrypt-dev
+    - fonts-dejavu-core
 
 - name: install language packs for locale support
   apt: name={{ item }} state=latest
